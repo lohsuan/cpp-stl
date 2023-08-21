@@ -30,7 +30,7 @@
           }
       },
       "edit-link": {
-        "base": "https://github.com/<你的 GitHub 帳號>/demo-build-and-publish-gitbook/edit/master/",
+        "base": "https://github.com/lohsuan/cpp-stl/edit/main/",
         "label": "Edit This Page"
       },
       "ga": {
