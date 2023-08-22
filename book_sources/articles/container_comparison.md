@@ -11,8 +11,7 @@
   - `vector` 很慢 _O(N)_，因需要拷貝和移動數據，尤其是頭部，在尾部則很快。
   - `list` 很快 _O(1)_，只需要**改變指針的指向**，不需要拷貝和移動數據。O(1)
 
-p.s. single linked list 的新增刪除還是 _O(N)_，\
-因爲少 forward pointer，找前一個元素就必須從頭掃一次。
+p.s. single linked list 的新增刪除還是 _O(N)_，因爲少 forward pointer，找前一個元素就必須從頭掃一次。
 
 ### 結論：常需要隨機訪問用 `vector`、常需要新增刪除中間數據用 `list`
 
