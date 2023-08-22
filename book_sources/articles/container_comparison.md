@@ -4,10 +4,10 @@
 
 - `vector` 封裝了 **array list**
 - `list` 封裝了 **doublely linked list**
-- 主要區別是**隨機存取**能力：
+- **隨機存取**：
   - `vector` 使用 **contiguous memory** -> 支援 **random access** `[]`/`at`。
   - `list` 非連續記憶體空間，不支持 random access `[]`。
-- 也因此，在**插入/刪除**方面:
+- **插入/刪除**：
   - `vector` 很慢 _O(N)_，因需要拷貝和移動數據，尤其是頭部，在尾部則很快。
   - `list` 很快 _O(1)_，只需要**改變指針的指向**，不需要拷貝和移動數據。O(1)
 
@@ -34,21 +34,21 @@ p.s. single linked list 的新增刪除還是 _O(N)_，\
 - `map` 封裝了**紅黑樹**， Self balancing Binary Search Tree (BST)
 - `unordered_map` 封裝了 **Hash Table**
 
-|              | map                  | unordered_map                  |
-| ------------ | -------------------- | ------------------------------ |
-| ordering     | 有序((key 由小到大)) | 無序                           |
-| search       | log(n)               | O(1) -> Average, O(n) -> Worst |
-| insert/erase | log(n) + Rebalance   | Same as search                 |
+|              | map                 | unordered_map                  |
+| ------------ | ------------------- | ------------------------------ |
+| ordering     | 有序 (key 由小到大) | 無序                           |
+| search       | log(n)              | O(1) -> Average, O(n) -> Worst |
+| insert/erase | log(n) + Rebalance  | same as search                 |
 
 ### 結論：需要鍵值排序用 `map`，需要搜尋資料、插入刪除用 `unordered_map`
 
-## `set`/`map`，`multiset/multimap`，`unordered_set/unordered_map`
+## `set/map`，`multiset/multimap`，`unordered_set/unordered_map`
 
 - `set` 只存 key，`map` 則是存 key value pairs
 - `std::map` 和 `std::set` 都是紅黑數
 - `std::map` 和 `std::unordered_map` 差在內部實作是 hash table
 - `std::map` 和 `std::multimap` 差在 element 可以有相同 key
 
-## `set` 和 `vector` 差在 set 不允許重複數據
+## `set` vs `vector`
 
-Map 和 Hash_Map 的區別是 Hash_Map 使用了 Hash 算法來加快查找過程，但是需要更多的內存來存放這些 Hash 桶元素，因此可以算得上是採用空間來換取時間策略。
+- set 不允許重複數據
