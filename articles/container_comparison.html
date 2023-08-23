@@ -1,0 +1,369 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Container 比較整理 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="containers/vector.html" />
+    
+    
+    <link rel="prev" href="../" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="container_comparison.html">
+            
+                <a href="container_comparison.html">
+            
+                    
+                    Container 比較整理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="containers/vector.html">
+            
+                <a href="containers/vector.html">
+            
+                    
+                    vector
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Container 比較整理</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#container-&#x6BD4;&#x8F03;&#x6574;&#x7406;"><b></b>Container &#x6BD4;&#x8F03;&#x6574;&#x7406;</a></li><ul><li><span class="title-icon "></span><a href="#vector-vs-list"><b></b>vector vs list</a></li><li><span class="title-icon "></span><a href="#map-vs-unorderedmap"><b></b>map vs unordered_map</a></li><li><span class="title-icon "></span><a href="#set-vs-map"><b></b>set vs map</a></li><ul><li><span class="title-icon "></span><a href="#c11-&#x5167;&#x90E8;&#x5BE6;&#x4F5C;&#x662F;-hash-table-&#x7684;-unorderedsetunorderedmap"><b></b>[C++11] &#x5167;&#x90E8;&#x5BE6;&#x4F5C;&#x662F; hash table &#x7684; unordered_set/unordered_map</a></li><li><span class="title-icon "></span><a href="#c11-&#x53EF;&#x64C1;&#x6709;&#x591A;&#x500B;&#x76F8;&#x540C;&#x9375;&#x503C;&#x7684;-multisetmultimap"><b></b>[C++11] &#x53EF;&#x64C1;&#x6709;&#x591A;&#x500B;&#x76F8;&#x540C;&#x9375;&#x503C;&#x7684; multiset/multimap</a></li></ul><li><span class="title-icon "></span><a href="#set-vs-vector"><b></b>set vs vector</a></li><ul><li><span class="title-icon "></span><a href="#c11-stdarray"><b></b>[C++11] std::array</a></li><li><span class="title-icon "></span><a href="#c11-stdforwardlist"><b></b>[C++11] std::forward_list</a></li></ul></ul></ul></div><a href="#container-&#x6BD4;&#x8F03;&#x6574;&#x7406;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="container-&#x6BD4;&#x8F03;&#x6574;&#x7406;"><a name="container-&#x6BD4;&#x8F03;&#x6574;&#x7406;" class="anchor-navigation-ex-anchor" href="#container-&#x6BD4;&#x8F03;&#x6574;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>Container &#x6BD4;&#x8F03;&#x6574;&#x7406;</h1>
+<h2 id="vector-vs-list"><a name="vector-vs-list" class="anchor-navigation-ex-anchor" href="#vector-vs-list"><i class="fa fa-link" aria-hidden="true"></i></a><code>vector</code> vs <code>list</code></h2>
+<ul>
+<li><code>vector</code> &#x5C01;&#x88DD;&#x4E86; <strong>array list</strong></li>
+<li><code>list</code> &#x5C01;&#x88DD;&#x4E86; <strong>doubly linked list</strong></li>
+<li>&#x96A8;&#x6A5F;&#x5B58;&#x53D6;&#xFF1A;<ul>
+<li><code>vector</code> &#x4F7F;&#x7528; <strong>contiguous memory</strong> -&gt; &#x652F;&#x63F4; <strong>random access</strong> <code>[]</code>/<code>at</code>&#x3002;</li>
+<li><code>list</code> &#x975E;&#x9023;&#x7E8C;&#x8A18;&#x61B6;&#x9AD4;&#x7A7A;&#x9593;&#xFF0C;&#x4E0D;&#x652F;&#x6301; random access <code>[]</code>&#x3002;</li>
+</ul>
+</li>
+<li>&#x63D2;&#x5165;/&#x522A;&#x9664;&#xFF1A;<ul>
+<li><code>vector</code> &#x5F88;&#x6162; <em>O(N)</em>&#xFF0C;&#x56E0;&#x9700;&#x8981;&#x62F7;&#x8C9D;&#x548C;&#x79FB;&#x52D5;&#x6578;&#x64DA;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x982D;&#x90E8;&#xFF0C;&#x5728;&#x5C3E;&#x90E8;&#x5247;&#x5F88;&#x5FEB;&#x3002;</li>
+<li><code>list</code> &#x5F88;&#x5FEB; <em>O(1)</em>&#xFF0C;&#x53EA;&#x9700;&#x8981;<strong>&#x6539;&#x8B8A;&#x6307;&#x91DD;&#x7684;&#x6307;&#x5411;</strong>&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x62F7;&#x8C9D;&#x548C;&#x79FB;&#x52D5;&#x6578;&#x64DA;&#x3002;O(1)</li>
+</ul>
+</li>
+</ul>
+<p>p.s. single linked list &#x7684;&#x65B0;&#x589E;&#x522A;&#x9664;&#x9084;&#x662F; <em>O(N)</em>&#xFF0C;&#x56E0;&#x7232;&#x5C11; forward pointer&#xFF0C;&#x627E;&#x524D;&#x4E00;&#x500B;&#x5143;&#x7D20;&#x5C31;&#x5FC5;&#x9808;&#x5F9E;&#x982D;&#x6383;&#x4E00;&#x6B21;&#x3002;</p>
+<p>&#x7D50;&#x8AD6;&#xFF1A;&#x5E38;&#x9700;&#x8981;&#x96A8;&#x6A5F;&#x8A2A;&#x554F;&#x7528; <code>vector</code>&#x3001;&#x5E38;&#x9700;&#x8981;&#x65B0;&#x589E;&#x522A;&#x9664;&#x4E2D;&#x9593;&#x6578;&#x64DA;&#x7528; <code>list</code></p>
+<h2 id="map-vs-unorderedmap"><a name="map-vs-unorderedmap" class="anchor-navigation-ex-anchor" href="#map-vs-unorderedmap"><i class="fa fa-link" aria-hidden="true"></i></a><code>map</code> vs <code>unordered_map</code></h2>
+<ul>
+<li>&#x5B58;&#x653E; key-value pairs &#x7684;&#x6620;&#x5C04;&#x8CC7;&#x6599;&#x7D50;&#x69CB;</li>
+<li><code>map</code> &#x5C01;&#x88DD;&#x4E86;<strong>&#x7D05;&#x9ED1;&#x6A39;</strong>&#xFF0C; Self balancing Binary Search Tree (BST)</li>
+<li><code>unordered_map</code> &#x5C01;&#x88DD;&#x4E86; <strong>Hash Table</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>map</th>
+<th>unordered_map</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ordering</td>
+<td>&#x6709;&#x5E8F; (key &#x7531;&#x5C0F;&#x5230;&#x5927;)</td>
+<td>&#x7121;&#x5E8F;</td>
+</tr>
+<tr>
+<td>search</td>
+<td>log(n)</td>
+<td>O(1) -&gt; Average, O(n) -&gt; Worst</td>
+</tr>
+<tr>
+<td>insert/erase</td>
+<td>log(n) + Rebalance</td>
+<td>same as search</td>
+</tr>
+</tbody>
+</table>
+<p>&#x7D50;&#x8AD6;&#xFF1A;&#x9700;&#x8981;&#x9375;&#x503C;&#x6392;&#x5E8F;&#x7528; <code>map</code>&#xFF0C;&#x9700;&#x8981;&#x641C;&#x5C0B;&#x8CC7;&#x6599;&#x3001;&#x63D2;&#x5165;&#x522A;&#x9664;&#x7528; <code>unordered_map</code></p>
+<h2 id="set-vs-map"><a name="set-vs-map" class="anchor-navigation-ex-anchor" href="#set-vs-map"><i class="fa fa-link" aria-hidden="true"></i></a><code>set</code> vs <code>map</code></h2>
+<ul>
+<li><code>set</code> &#x53EA;&#x5B58; key&#xFF0C;<code>map</code> &#x5247;&#x662F;&#x5B58; key value pairs</li>
+<li>&#x90FD;&#x662F;&#x7D05;&#x9ED1;&#x6A39; (Self-Balancing BST)</li>
+</ul>
+<h3 id="c11-&#x5167;&#x90E8;&#x5BE6;&#x4F5C;&#x662F;-hash-table-&#x7684;-unorderedsetunorderedmap"><a name="c11-&#x5167;&#x90E8;&#x5BE6;&#x4F5C;&#x662F;-hash-table-&#x7684;-unorderedsetunorderedmap" class="anchor-navigation-ex-anchor" href="#c11-&#x5167;&#x90E8;&#x5BE6;&#x4F5C;&#x662F;-hash-table-&#x7684;-unorderedsetunorderedmap"><i class="fa fa-link" aria-hidden="true"></i></a>[C++11] &#x5167;&#x90E8;&#x5BE6;&#x4F5C;&#x662F; hash table &#x7684; <code>unordered_set/unordered_map</code></h3>
+<h3 id="c11-&#x53EF;&#x64C1;&#x6709;&#x591A;&#x500B;&#x76F8;&#x540C;&#x9375;&#x503C;&#x7684;-multisetmultimap"><a name="c11-&#x53EF;&#x64C1;&#x6709;&#x591A;&#x500B;&#x76F8;&#x540C;&#x9375;&#x503C;&#x7684;-multisetmultimap" class="anchor-navigation-ex-anchor" href="#c11-&#x53EF;&#x64C1;&#x6709;&#x591A;&#x500B;&#x76F8;&#x540C;&#x9375;&#x503C;&#x7684;-multisetmultimap"><i class="fa fa-link" aria-hidden="true"></i></a>[C++11] &#x53EF;&#x64C1;&#x6709;&#x591A;&#x500B;&#x76F8;&#x540C;&#x9375;&#x503C;&#x7684; <code>multiset/multimap</code></h3>
+<h2 id="set-vs-vector"><a name="set-vs-vector" class="anchor-navigation-ex-anchor" href="#set-vs-vector"><i class="fa fa-link" aria-hidden="true"></i></a><code>set</code> vs <code>vector</code></h2>
+<ul>
+<li>set &#x4E0D;&#x5141;&#x8A31;&#x91CD;&#x8907;&#x6578;&#x64DA;</li>
+</ul>
+<h3 id="c11-stdarray"><a name="c11-stdarray" class="anchor-navigation-ex-anchor" href="#c11-stdarray"><i class="fa fa-link" aria-hidden="true"></i></a>[C++11] <code>std::array</code></h3>
+<ul>
+<li>&#x5728;&#x7DE8;&#x8B6F;&#x968E;&#x6BB5;&#x5C31;&#x6C7A;&#x5B9A;&#x597D;&#x5927;&#x5C0F;&#xFF0C;&#x4E8B;&#x5F8C;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;</li>
+</ul>
+<h3 id="c11-stdforwardlist"><a name="c11-stdforwardlist" class="anchor-navigation-ex-anchor" href="#c11-stdforwardlist"><i class="fa fa-link" aria-hidden="true"></i></a>[C++11] <code>std::forward_list</code></h3>
+<ul>
+<li>list &#x7684;&#x55AE;&#x5411;&#x7248;&#x672C;&#xFF08;singly-linked list&#xFF09;</li>
+<li>&#x975E;&#x9023;&#x7E8C;&#x7684;&#x8A18;&#x61B6;&#x9AD4;&#x914D;&#x7F6E;&#x4F9D;&#x5E8F;&#x9023;&#x7D50;</li>
+<li>&#x6BD4; <code>vector</code> &#x66F4;&#x5FEB;&#x901F;&#x5730;&#x5C07;&#x65B0;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x5728;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x3001;&#x6216;&#x628A;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;&#x79FB;&#x9664;<ul>
+<li>&#x96D6;&#x7136;&#x9084;&#x662F; O(N)&#xFF0C;&#x4F46;&#x7701;&#x6389;&#x62F7;&#x8C9D;&#x548C;&#x79FB;&#x52D5;&#x6578;&#x64DA;&#x7684;&#x6642;&#x9593;</li>
+</ul>
+</li>
+<li>&#x6C92;&#x6709;&#x96A8;&#x6A5F;&#x5B58;&#x53D6;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x8981;&#x8B80;&#x53D6;&#x4E2D;&#x9593;&#x7684;&#x503C;&#x6703;&#x9700;&#x8981;&#x5F9E;&#x982D;&#x958B;&#x59CB;&#x627E;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="containers/vector.html" class="navigation navigation-next " aria-label="Next page: vector">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Container 比較整理","level":"1.2","depth":1,"next":{"title":"vector","level":"1.2.1","depth":2,"path":"articles/containers/vector.md","ref":"articles/containers/vector.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","anchor-navigation-ex","edit-link","code","theme-comscore","ga"],"pluginsConfig":{"github":{"url":"https://github.com/lohsuan/cpp-stl"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"ga":{"configuration":"auto","token":""},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/lohsuan/cpp-stl/edit/main/book_sources"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"articles/container_comparison.md","mtime":"2023-08-23T03:49:08.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-23T03:49:52.132Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

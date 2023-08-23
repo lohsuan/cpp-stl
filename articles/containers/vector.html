@@ -1,0 +1,403 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>vector · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="../container_comparison.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../container_comparison.html">
+            
+                <a href="../container_comparison.html">
+            
+                    
+                    Container 比較整理
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.2.1" data-path="vector.html">
+            
+                <a href="vector.html">
+            
+                    
+                    vector
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >vector</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#stdvector"><b></b>std::vector</a></li><ul><li><span class="title-icon "></span><a href="#basic"><b></b>Basic</a></li><li><span class="title-icon "></span><a href="#initialize"><b></b>Initialize</a></li><li><span class="title-icon "></span><a href="#traversal"><b></b>Traversal</a></li><li><span class="title-icon "></span><a href="#erase-element"><b></b>erase Element</a></li><ul><li><span class="title-icon "></span><a href="#single-element-position"><b></b>Single Element (position)</a></li><li><span class="title-icon "></span><a href="#a-range-of-elements-firstlast"><b></b>A Range of Elements [first,last)</a></li><li><span class="title-icon "></span><a href="#&#x522A;&#x7279;&#x5B9A;-value-&#x7684;&#x5143;&#x7D20;"><b></b>&#x522A;&#x7279;&#x5B9A; value &#x7684;&#x5143;&#x7D20;</a></li></ul><li><span class="title-icon "></span><a href="#insert-element"><b></b>insert Element</a></li><ul><li><span class="title-icon "></span><a href="#single-element"><b></b>Single Element</a></li><li><span class="title-icon "></span><a href="#3-range"><b></b>3. range</a></li></ul></ul></ul></div><a href="#stdvector" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="stdvector"><a name="stdvector" class="anchor-navigation-ex-anchor" href="#stdvector"><i class="fa fa-link" aria-hidden="true"></i></a>std::vector</h1>
+<h2 id="basic"><a name="basic" class="anchor-navigation-ex-anchor" href="#basic"><i class="fa fa-link" aria-hidden="true"></i></a>Basic</h2>
+<ul>
+<li>random access with <code>[]</code> &amp; <code>at()</code></li>
+<li>&#x6DFB;&#x52A0; <code>insert()</code>/&#x522A;&#x9664; <code>erase()</code> &#x9664;&#x4E86;&#x5C3E;&#x7AEF;&#x4E4B;&#x5916;&#x7684;&#x5143;&#x7D20;&#x90FD;&#x975E;&#x5E38;&#x8017;&#x6642;<ul>
+<li>relocate all the elements after the segment erased to their new positions</li>
+</ul>
+</li>
+<li><code>push_back()</code></li>
+<li><code>pop_back()</code></li>
+</ul>
+<h2 id="initialize"><a name="initialize" class="anchor-navigation-ex-anchor" href="#initialize"><i class="fa fa-link" aria-hidden="true"></i></a>Initialize</h2>
+<pre><code class="lang-cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+    <span class="hljs-comment">// (1) empty container constructor (default constructor)</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v1;
+    v1.push_back(<span class="hljs-number">1</span>);
+    v1.push_back(<span class="hljs-number">2</span>);
+
+    <span class="hljs-comment">// (2) range constructor: [first,last)</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v2(v1.begin(), v1.end());
+    <span class="hljs-keyword">int</span> myints[] = {<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>};
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v3(myints, myints + <span class="hljs-keyword">sizeof</span>(myints) / <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+
+    <span class="hljs-comment">// (3) fill constructor: 3 int with value 9</span>
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v4(<span class="hljs-number">3</span>,<span class="hljs-number">9</span>);
+
+    <span class="hljs-comment">// (4) copy constructor</span>
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v5 = v4;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h2 id="traversal"><a name="traversal" class="anchor-navigation-ex-anchor" href="#traversal"><i class="fa fa-link" aria-hidden="true"></i></a>Traversal</h2>
+<p>[], at()</p>
+<ul>
+<li><code>[]</code>: out of range &#x6642;&#x4E0D;&#x62CB;&#x932F;&#xFF0C;&#x7522;&#x751F; <em>undefined brhavior</em></li>
+<li><code>at()</code>: &#x6709; bound-checked&#xFF0C;&#x6703;&#x62CB; <em>out_of_range exception</em></li>
+</ul>
+<pre><code class="lang-cpp">    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; v1.size(); i++) {
+        <span class="hljs-built_in">cout</span> &lt;&lt; v1[i] &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+        <span class="hljs-built_in">cout</span> &lt;&lt; v1.at(i) &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
+    }
+</code></pre>
+<p>iterator</p>
+<pre><code class="lang-cpp">    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;::iterator it = v1.begin(); it != v1.end(); it++) {
+        <span class="hljs-built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+    }
+</code></pre>
+<p>reverse_iterator</p>
+<pre><code class="lang-cpp">    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;::reverse_iterator it = v1.rbegin(); it != v1.rend(); it++) {
+        <span class="hljs-built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+    }
+</code></pre>
+<h2 id="erase-element"><a name="erase-element" class="anchor-navigation-ex-anchor" href="#erase-element"><i class="fa fa-link" aria-hidden="true"></i></a><code>erase</code> Element</h2>
+<ul>
+<li>&#x9664;&#x4E86; erase &#x5C3E;&#x7AEF;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5176;&#x4ED6;&#x90FD;&#x5F88;&#x6162;</li>
+<li>&#x56DE;&#x50B3;&#xFF1A;An <em>iterator pointing to the new location</em> of the element that <em>followed the last element erased by the function call</em>.</li>
+</ul>
+<h3 id="single-element-position"><a name="single-element-position" class="anchor-navigation-ex-anchor" href="#single-element-position"><i class="fa fa-link" aria-hidden="true"></i></a>Single Element (position)</h3>
+<blockquote>
+<p>iterator erase (iterator position);</p>
+</blockquote>
+<pre><code class="lang-cpp">    v1.erase(v1.begin() + <span class="hljs-number">3</span>); <span class="hljs-comment">// &#x522A;&#x7B2C;4&#x500B;</span>
+</code></pre>
+<h3 id="a-range-of-elements-firstlast"><a name="a-range-of-elements-firstlast" class="anchor-navigation-ex-anchor" href="#a-range-of-elements-firstlast"><i class="fa fa-link" aria-hidden="true"></i></a>A Range of Elements [first,last)</h3>
+<blockquote>
+<p>iterator erase (iterator first, iterator last);</p>
+</blockquote>
+<pre><code class="lang-cpp">    v1.erase(v1.begin(), v1.begin() + <span class="hljs-number">3</span>); <span class="hljs-comment">// &#x522A;&#x524D;3&#x500B;</span>
+</code></pre>
+<h3 id="&#x522A;&#x7279;&#x5B9A;-value-&#x7684;&#x5143;&#x7D20;"><a name="&#x522A;&#x7279;&#x5B9A;-value-&#x7684;&#x5143;&#x7D20;" class="anchor-navigation-ex-anchor" href="#&#x522A;&#x7279;&#x5B9A;-value-&#x7684;&#x5143;&#x7D20;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x522A;&#x7279;&#x5B9A; value &#x7684;&#x5143;&#x7D20;</h3>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * argv[])</span> </span>{
+
+    <span class="hljs-keyword">int</span> myints[] = { <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span> };
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; v1(myints, myints + <span class="hljs-keyword">sizeof</span>(myints) / <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>));
+
+    <span class="hljs-comment">// &#x5220; value = 2 &#x7684; element</span>
+    <span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt;::iterator it = v1.begin();
+    <span class="hljs-keyword">while</span> (it != v1.end()) {
+        <span class="hljs-keyword">if</span> (*it == <span class="hljs-number">2</span>) {
+            it = v1.erase(it); <span class="hljs-comment">// &#x522A;&#x9664;&#x5F8C;&#x6703;&#x56DE;&#x50B3;&#x4E0B;&#x4E00;&#x500B;&#x4F4D;&#x7F6E;&#x7684; pointer&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981; it++</span>
+        } <span class="hljs-keyword">else</span> {
+            it++;
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+<h2 id="insert-element"><a name="insert-element" class="anchor-navigation-ex-anchor" href="#insert-element"><i class="fa fa-link" aria-hidden="true"></i></a><code>insert</code> Element</h2>
+<h3 id="single-element"><a name="single-element" class="anchor-navigation-ex-anchor" href="#single-element"><i class="fa fa-link" aria-hidden="true"></i></a>Single Element</h3>
+<blockquote>
+<p>iterator insert (iterator position, const value_type&amp; val); \</p>
+</blockquote>
+<pre><code class="lang-cpp">    <span class="hljs-comment">// [0,1,2,3,4,5,6,7,8,9]</span>
+    v1.insert(v1.begin() + <span class="hljs-number">3</span>, <span class="hljs-number">10</span>); <span class="hljs-comment">// [0,1,2,10,3,4,5,6,7,8,9]</span>
+</code></pre>
+<h4 id="2-fill-with-size"><a name="2-fill-with-size" class="anchor-navigation-ex-anchor" href="#2-fill-with-size"><i class="fa fa-link" aria-hidden="true"></i></a>2. Fill with Size</h4>
+<ul>
+<li>&#x9664;&#x4E86; insert &#x5C3E;&#x7AEF;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5176;&#x4ED6;&#x90FD;&#x5F88;&#x6162;</li>
+</ul>
+<blockquote>
+<p>void insert (iterator position, size_type n, const value_type&amp; val);</p>
+</blockquote>
+<pre><code class="lang-cpp">    <span class="hljs-comment">// [0,1,2,3,4,5,6,7,8,9]</span>
+    v1.insert(v1.begin()+<span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">11</span>);   <span class="hljs-comment">// [0,1,11,11,11,2,3,4,5,6,7,8,9]</span>
+</code></pre>
+<h3 id="3-range"><a name="3-range" class="anchor-navigation-ex-anchor" href="#3-range"><i class="fa fa-link" aria-hidden="true"></i></a>3. range</h3>
+<blockquote>
+<p>template <class inputiterator=""> void insert (iterator position, InputIterator first, InputIterator last);</class></p>
+</blockquote>
+<pre><code class="lang-cpp">    <span class="hljs-comment">// [0,1,2,3,4,5,6,7,8,9]</span>
+    <span class="hljs-keyword">int</span> myarray [] = { <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span> };
+    v1.insert(v1.begin(), myarray, myarray+<span class="hljs-number">3</span>); <span class="hljs-comment">// [10,11,12,0,1,2,3,4,5,6,7,8,9]</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../container_comparison.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Container 比較整理">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"vector","level":"1.2.1","depth":2,"previous":{"title":"Container 比較整理","level":"1.2","depth":1,"path":"articles/container_comparison.md","ref":"articles/container_comparison.md","articles":[{"title":"vector","level":"1.2.1","depth":2,"path":"articles/containers/vector.md","ref":"articles/containers/vector.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["github","anchor-navigation-ex","edit-link","code","theme-comscore","ga"],"pluginsConfig":{"github":{"url":"https://github.com/lohsuan/cpp-stl"},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"fontSettings":{"theme":"night","family":"sans"},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"theme-comscore":{},"ga":{"configuration":"auto","token":""},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"edit-link":{"label":"Edit This Page","base":"https://github.com/lohsuan/cpp-stl/edit/main/book_sources"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"articles/containers/vector.md","mtime":"2023-08-23T03:49:08.001Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-08-23T03:49:52.132Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+
