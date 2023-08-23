@@ -3,7 +3,7 @@
 ## Basic
 
 - random access with `[]` & `at()`
-- 添加 `insert()`/刪除 `erase` 除了尾端之外的 element 都非常耗時
+- 添加 `insert()`/刪除 `erase()` 除了尾端之外的元素都非常耗時
   - relocate all the elements after the segment erased to their new positions
 - `push_back()`
 - `pop_back()`
@@ -35,69 +35,70 @@ int main(int argc, const char * argv[]) {
 
 ```
 
-## Iterators
+## Traversal
+
+[], at()
 
 - `[]`: out of range 時不拋錯，產生 _undefined brhavior_
 - `at()`: 有 bound-checked，會拋 _out_of_range exception_
 
 ```cpp
-int main(int argc, const char * argv[]) {
-
-    vector<int> v1;
-    for (int i = 0; i < 10; i++) v1.push_back(i);
-
-    // [], at()
     for (int i = 0; i < v1.size(); i++) {
         cout << v1[i] << " ";
         cout << v1.at(i) << "\n";
     }
+```
 
-    // iterator
+iterator
+
+```cpp
     for (vector<int>::iterator it = v1.begin(); it != v1.end(); it++) {
         cout << *it << " ";
     }
+```
 
-    // reverse_iterator
+reverse_iterator
+
+```cpp
     for (vector<int>::reverse_iterator it = v1.rbegin(); it != v1.rend(); it++) {
         cout << *it << " ";
     }
-
-    return 0;
-}
 ```
 
-## `erase` element
+## `erase` Element
 
-### Removes a single element (position)
+- 除了 erase 尾端的元素，其他都很慢
+- 回傳：An _iterator pointing to the new location_ of the element that _followed the last element erased by the function call_.
 
-> iterator erase (iterator position); \
+### Single Element (position)
 
-### Remove a range of elements [first,last)
+> iterator erase (iterator position);
+
+```cpp
+    v1.erase(v1.begin() + 3); // 刪第4個
+```
+
+### A Range of Elements [first,last)
 
 > iterator erase (iterator first, iterator last);
 
----
+```cpp
+    v1.erase(v1.begin(), v1.begin() + 3); // 刪前3個
+```
 
-- 除了 erase 尾端的元素，其他都很慢
-- 回傳：An iterator pointing to the new location of the element that followed the last element erased by the function call.
+### 刪特定 value 的元素
 
 ```cpp
 int main(int argc, const char * argv[]) {
 
-    vector<int> v1;
-    for (int i = 1; i < 9; i++) v1.push_back(i); // [1,2,3,4,5,6,7,8]
-
-    v1.erase(v1.begin() +3); // 刪第4個: [1,2,3,5,6,7,8]
-    v1.erase(v1.begin(), v1.begin() + 3); // 刪前3個: [5,6,7,8]
-
-    v1.push_back(2);
-    v1.push_back(2);
+    int myints[] = { 1, 2, 3, 2, 1 };
+    std::vector<int> v1(myints, myints + sizeof(myints) / sizeof(int));
 
     // 删 value = 2 的 element
     vector<int>::iterator it = v1.begin();
     while (it != v1.end()) {
         if (*it == 2) {
-            it = v1.erase(it); // 刪除後會移到下一個位置，所以不需要 it++
+            it = v1.erase(it); // 刪除後會回傳下一個位置的 pointer，所以不需要 it++
         } else {
             it++;
         }
@@ -106,38 +107,34 @@ int main(int argc, const char * argv[]) {
 }
 ```
 
-## `insert` element
+## `insert` Element
 
-### 1. single element
+### Single Element
 
 > iterator insert (iterator position, const value_type& val); \
 
-### 2. fill with size
+```cpp
+    // [0,1,2,3,4,5,6,7,8,9]
+    v1.insert(v1.begin() + 3, 10); // [0,1,2,10,3,4,5,6,7,8,9]
+```
+
+#### 2. Fill with Size
+
+- 除了 insert 尾端的元素，其他都很慢
 
 > void insert (iterator position, size_type n, const value_type& val);
+
+```cpp
+    // [0,1,2,3,4,5,6,7,8,9]
+    v1.insert(v1.begin()+2, 3, 11);   // [0,1,11,11,11,2,3,4,5,6,7,8,9]
+```
 
 ### 3. range
 
 > template <class InputIterator> void insert (iterator position, InputIterator first, InputIterator last);
 
----
-
-- 除了 insert 尾端的元素，其他都很慢
-
 ```cpp
-int main(int argc, const char * argv[]) {
-
-    vector<int> v1;
-    for (int i = 1; i < 9; i++) v1.push_back(i); // [1,2,3,4,5,6,7,8]
-
-    // (1) single element
-    v1.insert(v1.begin() + 3, 10);  // [1,2,3,10,4,5,6,7,8]
-    // (2) fill
-    v1.insert(v1.begin(), 3, 11);   // [11,11,11,1,2,3,10,4,5,6,7,8]
-    // (3) range
-    int myarray [] = { 20,21,22 };
-    v1.insert (v1.begin(), myarray, myarray+3);
-
-    return 0;
-}
+    // [0,1,2,3,4,5,6,7,8,9]
+    int myarray [] = { 10, 11, 12 };
+    v1.insert(v1.begin(), myarray, myarray+3); // [10,11,12,0,1,2,3,4,5,6,7,8,9]
 ```

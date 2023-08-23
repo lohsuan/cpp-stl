@@ -36,7 +36,7 @@
             }
         },
         "edit-link": {
-            "base": "https://github.com/lohsuan/cpp-stl/edit/main",
+            "base": "https://github.com/lohsuan/cpp-stl/edit/main/book_sources",
             "label": "Edit This Page"
         },
         "ga": {
