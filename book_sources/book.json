@@ -1,5 +1,6 @@
 {
     "plugins": [
+        "github",
         "anchor-navigation-ex",
         "edit-link",
         "code",
@@ -38,6 +39,9 @@
         "edit-link": {
             "base": "https://github.com/lohsuan/cpp-stl/edit/main/book_sources",
             "label": "Edit This Page"
+        },
+        "github": {
+            "url": "https://github.com/lohsuan/cpp-stl"
         },
         "ga": {
             "token": ""

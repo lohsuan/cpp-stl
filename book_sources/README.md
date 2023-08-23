@@ -5,15 +5,10 @@ Ref: https://en.cppreference.com/w/
 
 STL 大致分為：
 - **container**
-![Container Library](https://hackmd.io/_uploads/HyC5plXan.png)
 - **algorthm**
 - **iterator**
 - function object
 - adaptor
 - allocator
 
-
-
----
-Source Code: https://github.com/lohsuan/cpp-stl
-Github Pages Website: [current page](https://lohsuan.github.io/cpp-stl/)
+![Container Library](articles/images/containers_library.png)
